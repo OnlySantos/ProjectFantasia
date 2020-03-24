@@ -1,0 +1,1020 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/assets/hex_board.png" type="Texture" id=1]
+[ext_resource path="res://src/assets/stretched_hex_board.png" type="Texture" id=2]
+[ext_resource path="res://src/assets/hex_tile.png" type="Texture" id=3]
+[ext_resource path="res://src/Engine/Inventory.gd" type="Script" id=4]
+[ext_resource path="res://src/assets/select_tile.png" type="Texture" id=5]
+
+[node name="PlayerUI" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -22.5
+margin_top = -22.5
+margin_right = 22.5
+margin_bottom = 22.5
+__meta__ = {
+"_edit_horizontal_guides_": [ 300.177 ],
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [ 511.786 ]
+}
+
+[node name="Inventory" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -273.0
+margin_top = -203.5
+margin_right = 273.0
+margin_bottom = 203.5
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slots_Quickbar" type="Control" parent="Inventory"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -188.5
+margin_top = 40.9625
+margin_right = 188.5
+margin_bottom = 94.9625
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Selection" type="TextureRect" parent="Inventory/Slots_Quickbar"]
+self_modulate = Color( 0.992157, 0.729412, 0, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = -7.33132
+margin_top = 4.09482
+margin_right = -216.576
+margin_bottom = 13.5128
+rect_min_size = Vector2( 49, 49 )
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_Q_01" type="TextureRect" parent="Inventory/Slots_Quickbar"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_right = 0.694
+anchor_bottom = 0.932
+margin_left = -2.06653
+margin_top = 7.34894
+margin_right = -218.705
+margin_bottom = 2.02094
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_Q_02" type="TextureRect" parent="Inventory/Slots_Quickbar"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 36.7072
+margin_top = -6.80838
+margin_right = -176.538
+margin_bottom = -1.39038
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_Q_03" type="TextureRect" parent="Inventory/Slots_Quickbar"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 78.9497
+margin_top = 5.88852
+margin_right = -134.295
+margin_bottom = 11.3065
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_Q_04" type="TextureRect" parent="Inventory/Slots_Quickbar"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.009
+anchor_bottom = 0.017
+margin_left = 120.789
+margin_top = -6.45554
+margin_right = 165.789
+margin_bottom = 38.5445
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_Q_05" type="TextureRect" parent="Inventory/Slots_Quickbar"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 162.717
+margin_top = 6.36185
+margin_right = -50.5278
+margin_bottom = 11.7799
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_Q_06" type="TextureRect" parent="Inventory/Slots_Quickbar"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 204.556
+margin_top = -7.38736
+margin_right = -8.6889
+margin_bottom = -1.96936
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_Q_07" type="TextureRect" parent="Inventory/Slots_Quickbar"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 247.001
+margin_top = 6.04629
+margin_right = 33.7561
+margin_bottom = 11.4643
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_Q_08" type="TextureRect" parent="Inventory/Slots_Quickbar"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 288.755
+margin_top = -6.98636
+margin_right = 75.5096
+margin_bottom = -1.56836
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_Q_09" type="TextureRect" parent="Inventory/Slots_Quickbar"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 330.544
+margin_top = 6.36185
+margin_right = 117.299
+margin_bottom = 11.7799
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slots_Inv" type="Control" parent="Inventory"]
+anchor_left = -0.433
+anchor_top = -0.23
+anchor_right = -0.433
+anchor_bottom = -0.23
+margin_left = -0.234604
+margin_top = 0.154861
+margin_right = 758.765
+margin_bottom = 505.155
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InventoryBG" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 2.44716
+margin_top = 7.77781
+margin_right = 2.03717
+margin_bottom = 7.50674
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InvTitle" type="Label" parent="Inventory/Slots_Inv"]
+margin_left = 181.509
+margin_top = 80.9434
+margin_right = 262.509
+margin_bottom = 97.9434
+rect_scale = Vector2( 2, 2 )
+custom_colors/font_color = Color( 0.8, 0.635294, 0.0431373, 0.988235 )
+text = "inventory"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CraftingBG" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.642
+anchor_top = 0.021
+anchor_right = 1.003
+anchor_bottom = 0.461
+margin_left = -0.278015
+margin_top = 0.395
+margin_right = -0.277039
+margin_bottom = 0.194992
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CraftTitle" type="Label" parent="Inventory/Slots_Inv"]
+margin_left = 562.828
+margin_top = 48.5512
+margin_right = 643.828
+margin_bottom = 65.5512
+rect_scale = Vector2( 1.5, 1.5 )
+custom_colors/font_color = Color( 0.8, 0.635294, 0.0431373, 0.988235 )
+text = "Crafting"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EquipmentBG" type="TextureRect" parent="Inventory/Slots_Inv"]
+visible = false
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.559
+anchor_top = 0.481
+anchor_right = 0.935
+anchor_bottom = 0.97
+margin_left = 2.38318
+margin_top = 7.72327
+margin_right = 1.84711
+margin_bottom = 7.68027
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_01" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 108.929
+margin_top = 108.228
+margin_right = -365.986
+margin_bottom = -216.937
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_02" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 151.023
+margin_top = 108.228
+margin_right = -323.892
+margin_bottom = -216.937
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_03" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 193.63
+margin_top = 108.228
+margin_right = -281.285
+margin_bottom = -216.937
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_04" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 234.724
+margin_top = 108.228
+margin_right = -240.191
+margin_bottom = -216.937
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_05" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 277.332
+margin_top = 108.228
+margin_right = -197.583
+margin_bottom = -216.937
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_06" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 319.399
+margin_top = 108.228
+margin_right = -155.516
+margin_bottom = -216.937
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_07" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 361.493
+margin_top = 108.228
+margin_right = -113.422
+margin_bottom = -216.937
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_08" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 88.3684
+margin_top = 144.162
+margin_right = -386.547
+margin_bottom = -181.003
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_09" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 130.134
+margin_top = 144.162
+margin_right = -344.782
+margin_bottom = -181.003
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_10" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 172.003
+margin_top = 144.162
+margin_right = -302.912
+margin_bottom = -181.003
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_11" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 213.757
+margin_top = 144.162
+margin_right = -261.158
+margin_bottom = -181.003
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_12" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 256.487
+margin_top = 144.162
+margin_right = -218.428
+margin_bottom = -181.003
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_13" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 298.209
+margin_top = 144.162
+margin_right = -176.706
+margin_bottom = -181.003
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_14" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 340.359
+margin_top = 144.162
+margin_right = -134.557
+margin_bottom = -181.003
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_15" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 382.054
+margin_top = 144.135
+margin_right = -92.8614
+margin_bottom = -181.03
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_16" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 68.3214
+margin_top = 180.123
+margin_right = -406.594
+margin_bottom = -145.042
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_17" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 109.2
+margin_top = 180.123
+margin_right = -365.715
+margin_bottom = -145.042
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_18" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 151.308
+margin_top = 180.123
+margin_right = -323.607
+margin_bottom = -145.042
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_19" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 193.109
+margin_top = 180.123
+margin_right = -281.807
+margin_bottom = -145.042
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_20" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 235.524
+margin_top = 180.123
+margin_right = -239.391
+margin_bottom = -145.042
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_21" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 277.632
+margin_top = 180.123
+margin_right = -197.283
+margin_bottom = -145.042
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_22" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 318.818
+margin_top = 180.123
+margin_right = -156.098
+margin_bottom = -145.042
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_23" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 360.926
+margin_top = 180.123
+margin_right = -113.99
+margin_bottom = -145.042
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_24" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 403.667
+margin_top = 180.016
+margin_right = -71.2477
+margin_bottom = -145.149
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_25" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 89.5304
+margin_top = 216.057
+margin_right = -385.385
+margin_bottom = -109.108
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_26" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 130.425
+margin_top = 216.057
+margin_right = -344.49
+margin_bottom = -109.108
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_27" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 172.449
+margin_top = 216.057
+margin_right = -302.466
+margin_bottom = -109.108
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_28" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 214.473
+margin_top = 216.057
+margin_right = -260.442
+margin_bottom = -109.108
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_29" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 256.045
+margin_top = 216.057
+margin_right = -218.87
+margin_bottom = -109.108
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_30" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 297.843
+margin_top = 216.057
+margin_right = -177.072
+margin_bottom = -109.108
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_31" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 339.867
+margin_top = 216.057
+margin_right = -135.048
+margin_bottom = -109.108
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_32" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 382.134
+margin_top = 216.761
+margin_right = -92.7813
+margin_bottom = -108.404
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_34" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 108.955
+margin_top = 251.991
+margin_right = -365.96
+margin_bottom = -73.1743
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_35" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 151.075
+margin_top = 251.991
+margin_right = -323.84
+margin_bottom = -73.1743
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_36" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 192.961
+margin_top = 251.991
+margin_right = -281.954
+margin_bottom = -73.1743
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_37" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 235.125
+margin_top = 251.991
+margin_right = -239.79
+margin_bottom = -73.1743
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_38" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 277.635
+margin_top = 251.991
+margin_right = -197.28
+margin_bottom = -73.1743
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_39" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 319.041
+margin_top = 251.991
+margin_right = -155.874
+margin_bottom = -73.1743
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_I_40" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 361.06
+margin_top = 252.831
+margin_right = -113.855
+margin_bottom = -72.3345
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_C_01" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 538.194
+margin_top = 63.1507
+margin_right = 63.2787
+margin_bottom = -262.015
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_C_02" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 516.84
+margin_top = 99.4934
+margin_right = 41.9251
+margin_bottom = -225.672
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_C_03" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 559.649
+margin_top = 99.4934
+margin_right = 84.7341
+margin_bottom = -225.672
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_C_04" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.403922, 0.196078, 0.0470588, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 538.036
+margin_top = 135.52
+margin_right = 63.121
+margin_bottom = -189.645
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_O" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.898039, 0.741176, 0.133333, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 671.706
+margin_top = 99.058
+margin_right = 196.791
+margin_bottom = -226.107
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Slot_W" type="TextureRect" parent="Inventory/Slots_Inv"]
+self_modulate = Color( 0.513726, 0.345098, 0.219608, 1 )
+anchor_left = 0.009
+anchor_top = 0.017
+anchor_right = 0.694
+anchor_bottom = 0.75
+margin_left = 650.633
+margin_top = 135.292
+margin_right = 175.718
+margin_bottom = -189.874
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
