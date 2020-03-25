@@ -1,6 +1,11 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
 
-[node name="DestructibleObject" type="StaticBody"]
+[ext_resource path="res://src/Objects/Destructible/DestructibleObject.gd" type="Script" id=1]
+
+[node name="DestructibleObject" type="StaticBody" groups=[
+"resource",
+]]
+script = ExtResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 

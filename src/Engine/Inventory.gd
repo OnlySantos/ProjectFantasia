@@ -8,14 +8,16 @@ var output : TextureRect
 var byproduct : TextureRect
 
 var held_item = null
+var hold_offset = Vector2(-25,-25)
 var can_drop = false
+var equipped_tool = null
 var selection = 1
 onready var selected = $Slots_Quickbar.get_child(selection)
 const sel_offset = -2
 
 func _ready():
 	create_slots()
-	give({"rock" : 5 , "stick" : 3 , "fiber":3})
+	give({"rock" : 5 , "stick" : 3 , "fiber":3,"axe_crude":1})
 
 func create_slots():
 	for inventory in get_children():
@@ -67,6 +69,8 @@ func give(arr):
 		if slot:
 			slot.add_item(arr)
 
+	update_tool()
+
 func check_crafting():
 	recipe = []
 
@@ -98,52 +102,52 @@ func slot_gui_input(event , slot):
 	var right_click = event.is_action_released("action2")
 	var shift = Input.is_action_pressed("shift")
 
-	update_tool()
-
-	if event is InputEventMouseButton and slot.type != "OUTPUT" and slot.type != "WASTE":                # # # DOES NOT WORK FOR "OUTPUT" SLOTS # # #
-		if left_click:
-			if held_item:
-				if slot.item:
-					if slot.item[0] == held_item[0]:
-						slot.combine_stacks(held_item)
+	if event is InputEventMouseButton:
+		update_tool()
+		if slot.type != "OUTPUT" and slot.type != "WASTE":                # # # DOES NOT WORK FOR "OUTPUT" SLOTS # # #
+			if left_click:
+				if held_item:
+					if slot.item:
+						if slot.item[0] == held_item[0]:
+							slot.combine_stacks(held_item)
+						else:
+							slot.swap_stacks(held_item)
 					else:
-						slot.swap_stacks(held_item)
+						slot.place_stack(held_item)
+				elif !held_item:
+					if slot.item:
+						if shift:
+							for _i in range(0,slot.item[2]):
+								if slot.item:
+									slot.quick_move()
+								else:
+									return
+						else:
+							slot.pick_stack()
+			elif right_click:
+				if held_item:
+					slot.place_one(held_item)
 				else:
-					slot.place_stack(held_item)
-			elif !held_item:
-				if slot.item:
-					if shift:
-						for i in range(0,slot.item[2]):
-							if slot.item:
-								slot.quick_move()
-							else:
-								return
-					else:
-						slot.pick_stack()
-		elif right_click:
-			if held_item:
-				slot.place_one(held_item)
-			else:
-				if slot.item:
-					slot.pick_half()
+					if slot.item:
+						slot.pick_half()
 
-		if slot.type == "CRAFTING":
-			if left_click or right_click:
-				check_crafting()
+			if slot.type == "CRAFTING":
+				if left_click or right_click:
+					check_crafting()
 
-	if event is InputEventMouseButton and (slot.type == "OUTPUT" or slot.type == "WASTE"):                # # # ONLY WORKS FOR "OUTPUT" SLOTS # # #
-		if slot.item:                                                           # # SLOT HAS ITEM # #
-			if !held_item:                                                      # # NOT HOLDING ITEM # #
-				if left_click:                                                  # [-] PICK STACK [-] #
-					if shift:
-						slot.quick_move()
+		if (slot.type == "OUTPUT" or slot.type == "WASTE"):                # # # ONLY WORKS FOR "OUTPUT" SLOTS # # #
+			if slot.item:                                                           # # SLOT HAS ITEM # #
+				if !held_item:                                                      # # NOT HOLDING ITEM # #
+					if left_click:                                                  # [-] PICK STACK [-] #
+						if shift:
+							slot.quick_move()
+							complete_craft()
+						else:
+							slot.pick_stack()
+							complete_craft()
+					elif right_click:                                               # [-] PICK ONE [-] #
+						slot.pick_stack()#slot.pick_one()
 						complete_craft()
-					else:
-						slot.pick_stack()
-						complete_craft()
-				elif right_click:                                               # [-] PICK ONE [-] #
-					slot.pick_stack()#slot.pick_one()
-					complete_craft()
 
 func _input(event):
 	var scroll_up = event.is_action_released("scroll_up")
@@ -152,7 +156,7 @@ func _input(event):
 
 	if event is InputEventMouseMotion:
 		if held_item:
-			held_item[1].rect_position = get_global_mouse_position()
+			held_item[1].rect_position = get_global_mouse_position() + hold_offset
 
 	if scroll_up or scroll_down:
 		if scroll_up:
@@ -168,7 +172,9 @@ func _input(event):
 				selection = 1
 		$Slots_Quickbar/Selection.rect_global_position = $Slots_Quickbar.get_child(selection).rect_global_position + Vector2(sel_offset,sel_offset)
 		selected = $Slots_Quickbar.get_child(selection)
-		print(selected.name)
+		update_tool()
+
+		#print(selected.name)
 
 #	if left_click:
 #		if held_item:
@@ -182,7 +188,15 @@ func _input(event):
 #		else:
 #			item_dropping = true
 #			#print("droppable")
-	pass
+
 
 func update_tool():
-	pass
+	var quickslot = $Slots_Quickbar.get_child(selection)
+	if quickslot.item:
+		if Globals.get_item(quickslot.item[0]).has("tool_info"):
+			print(Globals.get_item(quickslot.item[0])["tool_info"])
+			equipped_tool = Globals.get_item(quickslot.item[0])["tool_info"]
+			return
+	equipped_tool = null
+#	else:
+#		print("no item type")

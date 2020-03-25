@@ -1,5 +1,12 @@
 extends Node
 
+#name
+#(optional) [tool_type , resource_modifier , damage]
+#preload(<path to icon>)
+#preload(<path to object>)
+#max_stack_size
+
+
 const ITEMS = {
 	"stick" : {
 		"name" : "Stick",
@@ -23,16 +30,25 @@ const ITEMS = {
 	},
 	"axe_crude" : {
 		"name" : "Crude Axe",
+		"tool_info" : ["axe",1,3],
 		"icon" : preload("res://src/assets/Icons/crude_axe.png"),
 #		"object" : preload("res://Objects/PickupObjects/Axe.tscn") ,
 		"stack_size" : 1
 	},
 		"pickaxe_crude" : {
 		"name" : "Crude Axe",
+		"tool_info" : ["pickaxe",1.1,3],
 		"icon" : preload("res://src/assets/Icons/crude_pickaxe.png"),
 #		"object" : preload("res://Objects/PickupObjects/Axe.tscn") ,
 		"stack_size" : 1
 	},
+		"log" : {
+		"name" : "Log",
+		"icon" : preload("res://src/assets/Icons/log.png"),
+#		"object" : preload("res://Objects/PickupObjects/Axe.tscn") ,
+		"stack_size" : 5
+	},
+
 
 	"error" : {
 		"name" : "E",

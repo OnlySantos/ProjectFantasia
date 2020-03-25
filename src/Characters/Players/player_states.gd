@@ -12,6 +12,7 @@ func state_logic(delta):
 
 	if state != states.search:
 		parent.apply_motion(delta)
+		parent.check_raycast()
 	parent.position_reset()
 
 # warning-ignore:unused_argument
@@ -55,22 +56,23 @@ func get_transition(delta):
 func enter_state(new_state,old_state):
 	match new_state:
 		states.idle:
-			print("STATE: idle")
+			pass#print("STATE: idle")
 #			parent.anim_player.play("idle")
 		states.walk:
-			print("STATE: walk")
+			pass#print("STATE: walk")
 #			parent.anim_player.play("walk")
 		states.jump:
-			print("STATE: jump")
+			pass#print("STATE: jump")
 #			parent.anim_player.play("jump")
 		states.fall:
-			print("STATE: fall")
+			pass#print("STATE: fall")
 #			parent.anim_player.play("fall")
 		states.search:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			parent.raycast.enabled = false
-			print("STATE: opening inventory")
+			print("STATE_ENTER: search")
 
+# warning-ignore:unused_argument
 func exit_state(old_state,new_state):
 	match old_state:
 #		states.idle:
@@ -79,21 +81,32 @@ func exit_state(old_state,new_state):
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 			parent.raycast.enabled = true
 			close_inv()
-			print("STATE: closing inventory")
+			print("STATE_EXIT: search")
 
 func _input(event):
+	if event.is_action_pressed("jump") and [states.idle,states.walk].has(state):
+		parent.velocity.y = parent.max_jump_velocity
+		parent.is_jumping = true
+	if event.is_action_released("jump") and parent.velocity.y > parent.min_jump_velocity:
+		parent.velocity.y = parent.min_jump_velocity
+
+	if event.is_action_pressed("fullscreen_toggle"):
+		if OS.window_fullscreen:
+			OS.window_fullscreen = false
+		else:
+			OS.window_fullscreen = true
+
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit()
 
 	if event.is_action_pressed("open_inv"):
 		
 		if [states.walk,states.idle].has(state):
-			parent.inventory.visible = true
+			parent.inventory.get_node("Slots_Inv").visible = true
 			parent.inv_open = true
 		if state == states.search:
-			parent.inventory.visible = false
+			parent.inventory.get_node("Slots_Inv").visible = false
 			parent.inv_open = false
-			
 
 	if event is InputEventMouseMotion:
 		if state != states.search:
@@ -101,7 +114,7 @@ func _input(event):
 			parent.get_node("head").rotate_x(-event.relative.y * 0.005)
 
 func close_inv():
-	for slot in parent.inventory.get_parent().crafting_slots:
+	for slot in parent.inventory.crafting_slots:
 		if slot.item:
 			slot.quick_move()
 
